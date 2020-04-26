@@ -1,0 +1,37 @@
+@{
+    ViewData["Title"] = "Clients";
+}
+@model Bank.ViewModels.ClientViewModel
+
+@using(Html.BeginForm("CreateOneClient", "Bank", FormMethod.Post))
+{
+    <div class="text-center">
+        <h1 class="display-4">Log in</h1>
+        <div class="text-center">
+            @Html.ValidationSummary()
+            @Html.LabelFor(model => model.Name)
+            @Html.EditorFor(model => model.Name)
+        </div>
+        <div class="text-center">
+            @Html.LabelFor(model => model.Surname)
+            @Html.EditorFor(model => model.Surname)
+        </div>
+        <div class="text-center">
+            @Html.LabelFor(model => model.PassportNum)
+            @Html.EditorFor(model => model.PassportNum)
+        </div>
+        <div class="text-center">
+            @Html.LabelFor(model => model.PassportSeries)
+            @Html.EditorFor(model => model.PassportSeries)
+        </div>
+        <div class="text-center">
+            @Html.LabelFor(model => model.Adress)
+            @Html.EditorFor(model => model.Adress)
+        </div>
+        <div class="text-center">
+            @Html.LabelFor(model => model.Email)
+            @Html.EditorFor(model => model.Email)
+        </div>
+        <input type="submit" name="submit" id="submit" class="form-submit" value="Submit"/>
+    </div>
+}

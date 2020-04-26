@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Log in";
+    Layout = "~/Views/Shared/LoginLayout.cshtml";
+}
+@model Bank.ViewModels.WorkerViewModel
+
+@using(Html.BeginForm("ConfirmLogin", "Login", FormMethod.Post))
+{
+    
+    <div class="text-center">
+        <h1 class="display-4">Log in</h1>
+        <div class="text-center">
+            @Html.ValidationSummary()
+            @Html.LabelFor(model => model.Login)
+            @Html.EditorFor(model => model.Login)
+        </div>
+        <div class="text-center">
+            @Html.LabelFor(model => model.Password)
+            @Html.EditorFor(model => model.Password)
+        </div>
+        <input type="submit" name="submit" id="submit" class="form-submit" value="Submit"/>
+    </div>
+}
+

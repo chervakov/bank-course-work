@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "Profile";
+}
+@model Bank.Models.Worker;
+
+<div class="text-center">
+    <h1 class="display-4">@Model.Name @Model.Surname</h1>
+    <div class="text-center">
+        <label> Email: @Model.Email </label>
+    </div>
+    <div class="text-center">
+        <label> Role: @Model.Role </label>
+    </div>
+</div>
+

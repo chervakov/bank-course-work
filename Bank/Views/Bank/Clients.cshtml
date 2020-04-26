@@ -1,0 +1,39 @@
+@{
+    ViewData["Title"] = "Clients";
+}
+@model Bank.ViewModels.ClientsViewModel
+
+<div class="text-center">
+    <form action="@this.Url.Action("CreateClient", "Bank")">
+        <button type="submit">Create new client</button>
+    </form>
+</div>
+<div class="text-center">
+    <table class="table table-striped">
+        <tr>
+            <th><big>Id</big></th>
+            <th><big>Name</big></th>
+            <th><big>Surname</big></th>
+            <th><big>Passport number</big></th>
+            <th><big>Passport series</big></th>
+            <th><big>Adress</big></th>
+            <th><big>Email</big></th>
+        </tr>
+        @if (Model != null)
+        {
+            @foreach (var item in Model.Clients)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Surname</td>
+                    <td>@item.PassportNum</td>
+                    <td>@item.PassportSeries</td>
+                    <td>@item.Adress</td>
+                    <td>@item.Email</td>
+                    <td><a href="~/Bank/ClientProfile?id=@item.Id">View profile</a></td>
+                </tr>
+            }
+        }
+    </table>
+</div>

@@ -1,0 +1,17 @@
+@{
+    ViewData["Title"] = "Home";
+    @if(User.Identity.Name == null)
+    {
+        Layout = "~/Views/Shared/LoginLayout.cshtml";
+    }
+
+    <div class="text-center">
+        <h1>Coursework, BSUIR, Dmitry Chervyakov, group 773904.</h1>
+    </div>
+    <div class="text-center">
+        <h3>Programming language: C#. Framework: ASP.NET Core MVC. Database management system: MySQL</h3>
+    </div>
+    <div class="text-center"> 
+        <h6>This is a banking system that makes it easier for Bank employees to work.</h6> 
+    </div>
+}
